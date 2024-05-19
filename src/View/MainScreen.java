@@ -83,7 +83,7 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel1.setText("Stock Manager");
 
         jTableAlunos.setAutoCreateRowSorter(true);
-        jTableAlunos.setBackground(new java.awt.Color(255, 255, 255));
+        jTableAlunos.setBackground(new java.awt.Color(250, 240, 240));
         jTableAlunos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jTableAlunos.setFont(new java.awt.Font("Inter Medium", 0, 14)); // NOI18N
         jTableAlunos.setModel(new javax.swing.table.DefaultTableModel(
@@ -105,11 +105,9 @@ public class MainScreen extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTableAlunos.setColumnSelectionAllowed(true);
         jTableAlunos.setGridColor(new java.awt.Color(0, 0, 0));
         jTableAlunos.setOpaque(false);
         jTableAlunos.setRowHeight(30);
-        jTableAlunos.setRowSelectionAllowed(false);
         jTableAlunos.setShowGrid(true);
         jTableAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

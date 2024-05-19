@@ -6,6 +6,7 @@ package View;
 
 import DAO.ProdutoDAO;
 import Model.Produto;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.logging.Level;
@@ -25,6 +26,9 @@ public class AddProduct extends javax.swing.JFrame {
     
     public AddProduct() {
         initComponents();
+        
+        Color bgColor = new Color(250, 240, 240);
+        getContentPane().setBackground(bgColor);
         
         this.dao = new ProdutoDAO();
     }
@@ -51,7 +55,11 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 240, 240));
 
+        c_stock.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        c_stock.setForeground(new java.awt.Color(0, 0, 0));
+        c_stock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 16, 36)));
         c_stock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_stockActionPerformed(evt);
@@ -61,20 +69,31 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel4.setText("Preço");
 
+        c_price.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        c_price.setForeground(new java.awt.Color(0, 0, 0));
+        c_price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 16, 36)));
         c_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_priceActionPerformed(evt);
             }
         });
 
+        b_add.setBackground(new java.awt.Color(253, 164, 165));
+        b_add.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        b_add.setForeground(new java.awt.Color(0, 0, 0));
         b_add.setText("Cadastrar");
+        b_add.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(253, 164, 164), 2, true));
         b_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_addActionPerformed(evt);
             }
         });
 
+        b_cancel.setBackground(new java.awt.Color(250, 240, 240));
+        b_cancel.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        b_cancel.setForeground(new java.awt.Color(0, 0, 0));
         b_cancel.setText("Cancelar");
+        b_cancel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 164, 165), 2, true));
         b_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_cancelActionPerformed(evt);
@@ -84,6 +103,9 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel1.setText("Nome:");
 
+        c_name.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        c_name.setForeground(new java.awt.Color(0, 0, 0));
+        c_name.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(130, 16, 52), 2, true));
         c_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nameActionPerformed(evt);
@@ -93,6 +115,9 @@ public class AddProduct extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jLabel2.setText("Descrição");
 
+        c_desc.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        c_desc.setForeground(new java.awt.Color(0, 0, 0));
+        c_desc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 16, 36)));
         c_desc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_descActionPerformed(evt);
@@ -120,50 +145,52 @@ public class AddProduct extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(c_desc, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
-                            .addComponent(c_name)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(c_price, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                                .addComponent(c_stock, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(c_desc, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                                .addComponent(c_name))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(b_cancel, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                                    .addComponent(c_price, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(c_stock, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addComponent(b_add, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 158, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 158, Short.MAX_VALUE)
-                .addComponent(b_cancel)
-                .addGap(52, 52, 52)
-                .addComponent(b_add)
-                .addGap(151, 151, 151))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(c_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(c_name, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(c_desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(c_desc, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(c_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(c_stock, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(c_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(c_price, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b_add)
-                    .addComponent(b_cancel))
-                .addContainerGap(51, Short.MAX_VALUE))
+                    .addComponent(b_add, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -194,19 +221,19 @@ public class AddProduct extends javax.swing.JFrame {
             }
 
             if (this.c_desc.getText().length() <= 0) {
-                throw new Mensagens("Idade deve ser n�mero e maior que zero.");
+                throw new Mensagens("A descrição deve ser maior");
             } else {
                 description = this.c_desc.getText();
             }
 
-            if (this.c_stock.getText().length() < 2) {
-                throw new Mensagens("Curso deve conter ao menos 2 caracteres.");
+            if (Integer.parseInt(this.c_stock.getText()) < 2) {
+                throw new Mensagens("O estoque deve ser maior que 2");
             } else {
                 stock = Integer.parseInt(this.c_stock.getText());
             }
 
-            if (this.c_price.getText().length() <= 0) {
-                throw new Mensagens("Fase deve ser n�mero e maior que zero.");
+            if ((this.c_price.getText().length()) <= 0) {
+                throw new Mensagens("O preço deve ser maior do que 0");
             } else {
                 price = Double.parseDouble(this.c_price.getText());
             }
