@@ -1,7 +1,6 @@
 package Principal;
 
 import View.MainScreen;
-import View.TelaPrincipal;
 
 public class Principal {
 

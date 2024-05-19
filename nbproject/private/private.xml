@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/View/TelaPrincipal.java</file>
-            <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/View/MainScreen.java</file>
+            <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/DAO/ProdutoDAO.java</file>
+            <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/Model/Produto.java</file>
             <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/View/GerenciaAluno.java</file>
+            <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/MainScreen.java</file>
+            <file>file:/C:/Users/Enmanuel/Documents/NetBeansProjects/A3_Prog/src/Principal/Principal.java</file>
         </group>
     </open-files>
 </project-private>
