@@ -74,7 +74,7 @@ public class ProdutoDAO {
     // Update do CRUD
     public boolean AlterarProduto(Produto produto) {
 
-        String sql = "UPDATE tb_products SET name = ?, description = ?, stock = ?, price = ?, date_registered = ?, distributor_id = ? WHERE product_id = ?";
+        String sql = "UPDATE tb_products SET name = ?, description = ?, stock = ?, price = ? WHERE product_id = ?";
 
         try {
             PreparedStatement stmt = connector.getConexao().prepareStatement(sql);
@@ -83,8 +83,7 @@ public class ProdutoDAO {
             stmt.setString(2, produto.getDescription());
             stmt.setInt(3, produto.getStock());
             stmt.setDouble(4, produto.getPrice());
-            stmt.setTimestamp(5, produto.getDate_registered());
-            stmt.setInt(7, produto.getProduct_id());
+            stmt.setInt(5, produto.getProduct_id());
 
             stmt.execute();
             stmt.close();

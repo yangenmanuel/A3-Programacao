@@ -27,17 +27,17 @@ public class MainScreen extends javax.swing.JFrame {
         Color bgColor = new Color(250, 240, 240);
         getContentPane().setBackground(bgColor);
         
-        jTableAlunos.getTableHeader().setOpaque(false);
-        jTableAlunos.getTableHeader().setBackground(new Color(253, 164, 165));
+        jTableProducts.getTableHeader().setOpaque(false);
+        jTableProducts.getTableHeader().setBackground(new Color(253, 164, 165));
         
-        jTableAlunos.getTableHeader().setFont(new Font("Inter", Font.BOLD, 14));
+        jTableProducts.getTableHeader().setFont(new Font("Inter", Font.BOLD, 14));
         
         this.product = new Produto();
         this.loadTable();
     }
     
     public void loadTable() {
-        DefaultTableModel model = (DefaultTableModel) jTableAlunos.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTableProducts.getModel();
         model.setNumRows(0);
         
         ArrayList<Produto> list = new ArrayList();
@@ -70,7 +70,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableAlunos = new javax.swing.JTable();
+        jTableProducts = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,11 +82,11 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Stock Manager");
 
-        jTableAlunos.setAutoCreateRowSorter(true);
-        jTableAlunos.setBackground(new java.awt.Color(250, 240, 240));
-        jTableAlunos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jTableAlunos.setFont(new java.awt.Font("Inter Medium", 0, 14)); // NOI18N
-        jTableAlunos.setModel(new javax.swing.table.DefaultTableModel(
+        jTableProducts.setAutoCreateRowSorter(true);
+        jTableProducts.setBackground(new java.awt.Color(250, 240, 240));
+        jTableProducts.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTableProducts.setFont(new java.awt.Font("Inter Medium", 0, 14)); // NOI18N
+        jTableProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -105,27 +105,27 @@ public class MainScreen extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTableAlunos.setGridColor(new java.awt.Color(0, 0, 0));
-        jTableAlunos.setOpaque(false);
-        jTableAlunos.setRowHeight(30);
-        jTableAlunos.setShowGrid(true);
-        jTableAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableProducts.setGridColor(new java.awt.Color(0, 0, 0));
+        jTableProducts.setOpaque(false);
+        jTableProducts.setRowHeight(30);
+        jTableProducts.setShowGrid(true);
+        jTableProducts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTableAlunosMouseClicked(evt);
+                jTableProductsMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTableAlunos);
-        jTableAlunos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        if (jTableAlunos.getColumnModel().getColumnCount() > 0) {
-            jTableAlunos.getColumnModel().getColumn(0).setPreferredWidth(1);
-            jTableAlunos.getColumnModel().getColumn(3).setPreferredWidth(20);
-            jTableAlunos.getColumnModel().getColumn(4).setPreferredWidth(17);
+        jScrollPane1.setViewportView(jTableProducts);
+        jTableProducts.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        if (jTableProducts.getColumnModel().getColumnCount() > 0) {
+            jTableProducts.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTableProducts.getColumnModel().getColumn(3).setPreferredWidth(20);
+            jTableProducts.getColumnModel().getColumn(4).setPreferredWidth(17);
         }
 
         jButton1.setBackground(new java.awt.Color(250, 240, 240));
         jButton1.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
         jButton1.setText("Adicionar produto");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(253, 164, 164), 2, true));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setFocusPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +141,7 @@ public class MainScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(jLabel1)
@@ -165,10 +165,21 @@ public class MainScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTableAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableAlunosMouseClicked
+    private void jTableProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProductsMouseClicked
 
-        
-    }//GEN-LAST:event_jTableAlunosMouseClicked
+        if (this.jTableProducts.getSelectedRow() != -1) {
+            String id = this.jTableProducts.getValueAt(this.jTableProducts.getSelectedRow(), 0).toString();
+            String name = this.jTableProducts.getValueAt(this.jTableProducts.getSelectedRow(), 1).toString();
+            String description = this.jTableProducts.getValueAt(this.jTableProducts.getSelectedRow(), 2).toString();
+            String stock   = this.jTableProducts.getValueAt(this.jTableProducts.getSelectedRow(), 3).toString();
+            String price = this.jTableProducts.getValueAt(this.jTableProducts.getSelectedRow(), 4).toString();
+
+            
+            System.out.println(id+ name + description + stock + price);
+            
+            EditOrDeleteProduct editordelete = new EditOrDeleteProduct(id, name, description, stock, price);
+        }
+    }//GEN-LAST:event_jTableProductsMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -216,6 +227,6 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableAlunos;
+    private javax.swing.JTable jTableProducts;
     // End of variables declaration//GEN-END:variables
 }
