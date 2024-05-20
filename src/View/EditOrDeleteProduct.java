@@ -263,6 +263,15 @@ public class EditOrDeleteProduct extends javax.swing.JFrame {
 
     private void b_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_deleteActionPerformed
         // TODO add your handling code here:
+        int res = JOptionPane.showConfirmDialog(rootPane, "Realmente deseja eliminar esse produto?\nEsta operação é irreversível!!!");
+        
+        if (res == 0) {
+            this.dao = new ProdutoDAO();
+            this.dao.ExcluirProduto(Integer.parseInt(this.id));
+            setVisible(false);
+            MainScreen main = new MainScreen();
+            main.setVisible(true);
+        }
     }//GEN-LAST:event_b_deleteActionPerformed
 
     /**

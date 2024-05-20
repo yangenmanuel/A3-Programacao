@@ -100,7 +100,7 @@ public class ProdutoDAO {
 
         try {
             Statement stmt = connector.getConexao().createStatement();
-            stmt.executeUpdate("DELETE FROM tb_products WHERE id = " + product_id);
+            stmt.executeUpdate("DELETE FROM tb_products WHERE product_id = " + product_id);
 
             stmt.close();
         } 
