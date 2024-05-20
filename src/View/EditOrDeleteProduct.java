@@ -6,6 +6,7 @@ package View;
 
 import DAO.ProdutoDAO;
 import Model.Produto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -233,21 +234,31 @@ public class EditOrDeleteProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_c_priceActionPerformed
 
     private void b_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_editActionPerformed
-        product = new Produto();
+        int res = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente atualizar os dados do produto?\nEsta operação é irreversivel!!" );
         
-        product.setProduct_id(Integer.parseInt(this.id));
-        product.setName(this.c_name.getText());
-        product.setDescription(this.c_desc.getText());
-        product.setPrice(Double.parseDouble(this.c_price.getText()));
-        product.setStock(Integer.parseInt(this.c_stock.getText()));
+        if (res == 0) {
+            product = new Produto();
         
-        this.dao = new ProdutoDAO();
-        this.dao.AlterarProduto(product);
+            product.setProduct_id(Integer.parseInt(this.id));
+            product.setName(this.c_name.getText());
+            product.setDescription(this.c_desc.getText());
+            product.setPrice(Double.parseDouble(this.c_price.getText()));
+            product.setStock(Integer.parseInt(this.c_stock.getText()));
+        
+            this.dao = new ProdutoDAO();
+            this.dao.AlterarProduto(product);
+        
+            setVisible(false);
+            MainScreen main = new MainScreen();
+            main.setVisible(true);
+        }
     }//GEN-LAST:event_b_editActionPerformed
 
     private void b_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        MainScreen main = new MainScreen();
+        main.setVisible(true);
     }//GEN-LAST:event_b_cancelActionPerformed
 
     private void b_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_deleteActionPerformed

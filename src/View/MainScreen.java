@@ -178,6 +178,7 @@ public class MainScreen extends javax.swing.JFrame {
             System.out.println(id+ name + description + stock + price);
             
             EditOrDeleteProduct editordelete = new EditOrDeleteProduct(id, name, description, stock, price);
+            setVisible(false);
         }
     }//GEN-LAST:event_jTableProductsMouseClicked
 

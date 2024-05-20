@@ -268,6 +268,8 @@ public class AddProduct extends javax.swing.JFrame {
     private void b_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        MainScreen main = new MainScreen();
+        main.setVisible(true);
     }//GEN-LAST:event_b_cancelActionPerformed
 
     private void c_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_nameActionPerformed
