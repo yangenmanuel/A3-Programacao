@@ -1,12 +1,11 @@
 package Principal;
 
-import View.MainScreen;
+import View.Login;
 
 public class Principal {
 
     public static void main(String[] args) {
-//        TelaPrincipal objetotela = new TelaPrincipal();
-        MainScreen objetotela = new MainScreen();
+        Login objetotela = new Login();
         objetotela.setVisible(true);
     }
     
