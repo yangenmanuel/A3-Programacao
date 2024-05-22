@@ -83,6 +83,7 @@ public class AddProduct extends javax.swing.JFrame {
         b_add.setForeground(new java.awt.Color(0, 0, 0));
         b_add.setText("Cadastrar");
         b_add.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(253, 164, 164), 2, true));
+        b_add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_addActionPerformed(evt);
@@ -94,6 +95,7 @@ public class AddProduct extends javax.swing.JFrame {
         b_cancel.setForeground(new java.awt.Color(0, 0, 0));
         b_cancel.setText("Cancelar");
         b_cancel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 164, 165), 2, true));
+        b_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_cancelActionPerformed(evt);
@@ -242,7 +244,7 @@ public class AddProduct extends javax.swing.JFrame {
 
             // envia os dados para o Controlador cadastrar
             if (this.dao.InserirProduto(product)) {
-                JOptionPane.showMessageDialog(rootPane, "Aluno Cadastrado com Sucesso!");
+                JOptionPane.showMessageDialog(rootPane, "Produto Cadastrado com Sucesso!");
 
                 // limpa campos da interface
                 this.c_name.setText("");

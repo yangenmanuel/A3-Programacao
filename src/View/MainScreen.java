@@ -82,31 +82,40 @@ public class MainScreen extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Stock Manager");
 
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(400, 0));
+
         jTableProducts.setAutoCreateRowSorter(true);
         jTableProducts.setBackground(new java.awt.Color(250, 240, 240));
         jTableProducts.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jTableProducts.setFont(new java.awt.Font("Inter Medium", 0, 14)); // NOI18N
+        jTableProducts.setForeground(new java.awt.Color(0, 0, 0));
         jTableProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Produto", "Descrição", "Estoque", "Preço", "Data cadastrado", "Ações"
+                "ID", "Produto", "Descrição", "Estoque", "Preço", "Data cadastrado"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        jTableProducts.setAutoscrolls(false);
         jTableProducts.setGridColor(new java.awt.Color(0, 0, 0));
+        jTableProducts.setMinimumSize(new java.awt.Dimension(20, 0));
         jTableProducts.setOpaque(false);
+        jTableProducts.setPreferredSize(new java.awt.Dimension(400, 250));
         jTableProducts.setRowHeight(30);
         jTableProducts.setShowGrid(true);
         jTableProducts.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -117,9 +126,11 @@ public class MainScreen extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableProducts);
         jTableProducts.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         if (jTableProducts.getColumnModel().getColumnCount() > 0) {
-            jTableProducts.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTableProducts.getColumnModel().getColumn(0).setPreferredWidth(5);
+            jTableProducts.getColumnModel().getColumn(2).setPreferredWidth(150);
             jTableProducts.getColumnModel().getColumn(3).setPreferredWidth(20);
             jTableProducts.getColumnModel().getColumn(4).setPreferredWidth(17);
+            jTableProducts.getColumnModel().getColumn(5).setPreferredWidth(150);
         }
 
         jButton1.setBackground(new java.awt.Color(250, 240, 240));
@@ -139,27 +150,25 @@ public class MainScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
+                .addContainerGap(62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(246, 246, 246))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(22, 22, 22)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jLabel1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();

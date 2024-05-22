@@ -119,6 +119,7 @@ public class EditOrDeleteProduct extends javax.swing.JFrame {
         b_edit.setForeground(new java.awt.Color(0, 0, 0));
         b_edit.setText("Editar");
         b_edit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(253, 164, 164), 2, true));
+        b_edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_editActionPerformed(evt);
@@ -130,6 +131,7 @@ public class EditOrDeleteProduct extends javax.swing.JFrame {
         b_cancel.setForeground(new java.awt.Color(0, 0, 0));
         b_cancel.setText("Cancelar");
         b_cancel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(250, 164, 165), 2, true));
+        b_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_cancelActionPerformed(evt);
@@ -141,6 +143,7 @@ public class EditOrDeleteProduct extends javax.swing.JFrame {
         b_delete.setForeground(new java.awt.Color(0, 0, 0));
         b_delete.setText("Excluir");
         b_delete.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(253, 164, 164), 2, true));
+        b_delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_deleteActionPerformed(evt);
